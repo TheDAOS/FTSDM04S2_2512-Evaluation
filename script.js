@@ -5,6 +5,18 @@ document.body.onload = () => {
     loadData();
 };
 
+document.getElementById('toggleDarkMode').addEventListener('click', () => {
+    const mode = document.getElementById('toggleDarkMode');
+
+    if (mode.innerText == "Dark Mode") {
+        document.body.style.backgroundColor = 'black';
+        mode.innerText = 'Light Mode';
+    } else {
+        document.body.style.backgroundColor = 'white';
+        mode.innerText = 'Dark Mode';
+    }
+})
+
 document.getElementById('feedbackForm').addEventListener('submit', (event) => {
     event.preventDefault();
 
