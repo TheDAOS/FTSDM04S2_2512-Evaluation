@@ -10,19 +10,52 @@
     <header>
         <img width="24" height="24" src="https://img.icons8.com/forma-light-filled-sharp/24/turtle.png" alt="turtle"/>
         <nav>
-            <button type="button" id="navHome">Home</button>
-            <button type="button" id="navSubmitFeedback">Submit Feedback</button>
-            <button type="button" id="navViewFeedback">View Feedback</button>
+            <button type="button" id="navHome" onclick="navigation('home')">Home</button>
+            <button type="button" id="navSubmitFeedback" onclick="navigation('submitForm')">Submit Feedback</button>
+            <button type="button" id="navViewFeedback" onclick="navigation('feedback')">View Feedback</button>
         </nav>
         <button type="button" id="toggleDarkMode">Dark Mode</button>
     </header>
 
+    <!-- Home Page-->
     <section id="HomeSection">
         <div class="card">
-            Welcome to the Student Feedback Management System!
+            <h2>Welcome to the Student Feedback Management System!</h2>
+            <p>Submit your feedback or browse feedback entries for insights and improvements.</p>
         </div>
     </section>
-    <section id="SubmitFeedbackSection"></section>
+
+    <!-- Submit Feedback Page -->
+    <section id="SubmitFeedbackSection">
+        <form id="feedbackForm" class="card">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+
+            <label for="rating">Rating</label>
+            <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="feedbackMessage">Feedback Message</label>
+            <textarea name="feedbackMessage" id="feedbackMessage" required></textarea>
+
+            <div style="margin: 10px 0;">
+                <input type="checkbox" name="anonymous" id="anonymous">
+                <label for="anonymous">Send FeedBack Anonymously</label>
+            </div>
+
+            <input type="submit" value="Send FeedBack">
+        </form>
+    </section>
+
+    <!-- View Feedback Page -->
     <section id="ViewFeedbackSection"></section>
 
 

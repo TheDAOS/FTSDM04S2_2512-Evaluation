@@ -23,18 +23,32 @@ nav {
     align-items: center;
 }
 
-button {
+.card {
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px 10px 10px 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button,
+input,
+select,
+textarea {
     background-color: ghostwhite;
     border: 0;
     padding: 10px;
     border-radius: 8px;
     font-family: inherit;
     font-weight: bold;
-}
-
-.card {
-    background-color: lightcoral;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0px 10px 10px 10px;
 }
