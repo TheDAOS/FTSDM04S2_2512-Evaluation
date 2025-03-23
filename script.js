@@ -93,6 +93,7 @@ async function deleteFeedback(id) {
         const data = await response.json();
         console.log(data);
         loadData();
+        displayFeedback()
     } catch (error) {
         console.log(error);
     }
