@@ -37,6 +37,8 @@ document.getElementById('feedbackForm').addEventListener('submit', (event) => {
     form.reset();
 })
 
+document.getElementById('FilterRating').addEventListener('change', displayFeedback);
+
 function displayFeedback() {
     let data = localStorage.getItem('feedback') || '[]';
     data = JSON.parse(data);
@@ -46,7 +48,9 @@ function displayFeedback() {
 
     // console.log(data);
 
-    const section = document.getElementById('ViewFeedbackSection');
+    data = data.filter(row => row.rating > document.getElementById('FilterRating').value);
+
+    const section = document.getElementById('displayFeedback');
     section.innerHTML = ``;
 
     data.forEach(row => {
@@ -67,11 +71,11 @@ function displayFeedback() {
         card.appendChild(email);
 
         const rating = document.createElement('p');
-        rating.innerText = "Rating: "+ row.rating;
+        rating.innerText = "Rating: " + row.rating;
         card.appendChild(rating);
 
         const feedback = document.createElement('p');
-        feedback.innerText = "feedback: \n"+ row.feedbackMessage;
+        feedback.innerText = "feedback: \n" + row.feedbackMessage;
         card.appendChild(feedback);
 
         const deleteButton = document.createElement('button');
@@ -87,7 +91,7 @@ function displayFeedback() {
 
 async function deleteFeedback(id) {
     try {
-        const response = await fetch (baseURL+'/'+id+'.json', {
+        const response = await fetch(baseURL + '/' + id + '.json', {
             'method': 'DELETE',
         })
         const data = await response.json();

@@ -53,7 +53,7 @@ textarea {
     font-weight: bold;
 }
 
-#ViewFeedbackSection {
+#displayFeedback {
     display: grid;
     grid-template-columns: repeat(4, 300px);
 }

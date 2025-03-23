@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Feedback Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <img width="24" height="24" src="https://img.icons8.com/forma-light-filled-sharp/24/turtle.png" alt="turtle"/>
+        <img width="24" height="24" src="https://img.icons8.com/forma-light-filled-sharp/24/turtle.png" alt="turtle" />
         <nav>
             <button type="button" id="navHome" onclick="navigation('home')">Home</button>
             <button type="button" id="navSubmitFeedback" onclick="navigation('submitForm')">Submit Feedback</button>
@@ -56,10 +58,25 @@
     </section>
 
     <!-- View Feedback Page -->
-    <section id="ViewFeedbackSection"></section>
+    <section id="ViewFeedbackSection">
+        <div class="card">
+            <label for="FilterRating">Show Feedback above Rating</label>
+            <select name="FilterRating" id="FilterRating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div id="displayFeedback"></div>
+    </section>
 
 
 
     <script src="script.js"></script>
 </body>
+
 </html>
