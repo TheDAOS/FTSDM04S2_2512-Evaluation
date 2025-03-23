@@ -11,9 +11,11 @@ document.getElementById('toggleDarkMode').addEventListener('click', () => {
     if (mode.innerText == "Dark Mode") {
         document.body.style.backgroundColor = 'black';
         mode.innerText = 'Light Mode';
+        localStorage.setItem('mode', mode.innerText);
     } else {
         document.body.style.backgroundColor = 'white';
         mode.innerText = 'Dark Mode';
+        localStorage.setItem('mode', mode.innerText);
     }
 })
 
